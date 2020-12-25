@@ -24,36 +24,15 @@ header.addEventListener("mouseleave", function (e) {
 	menuLine.style.cssText = `display:none;`;
 });
 
-
-//Parallax
-
-
-// document.addEventListener("mousemove", parallax);
-// function parallax(e) {
-// 	document.querySelectorAll('.hero__img').forEach(
-// 		function (move) {
-// 			let moving_value = move.getAttribute('data-value');
-// 			let x = (e.clientX * moving_value) / 250;
-// 			let y = (e.clientY * moving_value) / 250;
-
-// 			move.style.transform = `translateX:${x}px translateY:${y}px;`;
-// 		});
-// }
-// console.log(parallax);
-// console.log(move);
-
 document.addEventListener('DOMContentLoaded', () => {
 	const scrollItems = document.querySelectorAll('.scroll-item');
 
 	const scrollAnimation = () => {
 		let windowCenter = (window.innerHeight / 1.3) + window.scrollY;
-		console.log(windowCenter)
 		scrollItems.forEach(el => {
 			let scrollOffset = el.offsetTop + (el.offsetHeight / 2);
 			if (windowCenter >= scrollOffset) {
 				el.classList.add('animation');
-			} else {
-				// el.classList.remove('animation');
 			}
 		});
 	};
